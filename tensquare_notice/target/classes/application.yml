@@ -1,0 +1,34 @@
+server:
+  port: 9014
+spring:
+  application:
+    name: tensquare-notice
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.13.128:3306/tensquare_notice?characterEncoding=utf-8
+    username: root
+    password: root
+  redis:
+    host: 192.168.200.128
+  rabbitmq:
+    host: 192.168.13.128
+# Mybatis-Plus 配置
+mybatis-plus:
+  typeAliasesPackage: com.tensquare.notice.pojo
+  global-config:
+    id-type: 1
+    db-column-underline: false
+    refresh-mapper: true
+    configuration:
+      map-underscore-to-camel-case: true
+      cache-enabled: true
+      lazyLoadingEnabled: true
+      multipleResultSetsEnabled: true
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# Eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true

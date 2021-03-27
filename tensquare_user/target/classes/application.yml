@@ -1,0 +1,29 @@
+server:
+  port: 9008
+spring:
+  application:
+    name: tensquare-user
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.13.128:3306/tensquare_user?characterEncoding=utf-8
+    username: root
+    password: root
+
+mybatis-plus:
+  typeAliasesPackage: com.tensquare.user.pojo
+  global-config:
+    id-type: 1
+    db-column-underline: false
+    refresh-mapper: true
+    configuration:
+      map-underscore-to-camel-case: true
+      cache-enabled: true
+      lazyLoadingEnabled: true
+      multipleResultSetsEnabled: true
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6868/eureka/
+  instance:
+    prefer-ip-address: true
